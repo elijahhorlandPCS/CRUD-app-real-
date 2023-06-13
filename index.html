@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="shopingcart.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Shoping list</title>
+  </head>
+
+  <body>
+
+    <h1>shoping list</h1>
+
+
+    <!-- Using this div to display the user ID -->
+    <div id="user" class="hidden">
+      <p>Welcome back <span id="emailLogged"></span></p>
+      <p>User ID: <span id="userid"></span></p>
+      <p><a href="index.html">logout?</a></p>
+    </div>
+
+
+    <h1 id="loginLook">Login:</h1>
+
+    <!-- Login section -->
+    <div id="login-page" class="login-page">
+      <!-- <h1 class="login-header">Log In</h1> -->
+      <div class="form">
+        <div class="login-form">
+
+          <input
+            id="username"
+            type="text"
+            placeholder="Username"
+          />
+
+          <input type="password" id="password" placeholder="password" />
+
+        </div>
+      </div>
+    </div>
+    <div>
+      <!-- Login anonymously -->
+      <input type="submit" value="LOGIN" onClick="login()" id="loginButton"/>
+      <!-- Finds todos in todos collection -->
+    </div>
+    <div id="switcharoo">
+        <p>don't have an account? <a href="create.html">create one</a></p>
+    </div>
+
+<div class="hidden" id="noones">
+    <form id="todoForm" onsubmit="return false;">
+      <label for="taskInput">Task:</label>
+      <input type="text" id="taskInput" name="task" required />
+      <button type="submit" onclick="insert_todo()">Create</button>
+      <button type="submit" onclick="toggle_todo()">Update</button>
+      <button type="submit" onclick="delete_todo()">Delete</button>
+      <!-- <input type="submit" value="FIND" onClick="find_todos()" /> -->
+    </form>
+</div>
+
+    <!-- Using this div to show the todos -->
+    <div id="todos"></div>
+    <script src="https://unpkg.com/realm-web/dist/bundle.iife.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
